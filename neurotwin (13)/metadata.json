@@ -1,0 +1,7 @@
+{
+  "name": "NeuroTwin",
+  "description": "A soft, jolly, emotional AI companion that analyzes feelings and provides grounding actions in your preferred language.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

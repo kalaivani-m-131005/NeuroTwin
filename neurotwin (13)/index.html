@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeuroTwin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Quicksand', 'sans-serif'],
+            },
+            colors: {
+              neuro: {
+                base: 'var(--color-base)',
+                surface: 'var(--color-surface)',
+                highlight: 'var(--color-highlight)',
+                primary: 'var(--color-primary)',
+                secondary: 'var(--color-secondary)',
+                accent: 'var(--color-accent)',
+                gradientStart: 'var(--color-grad-start)',
+                gradientMid: 'var(--color-grad-mid)',
+                gradientEnd: 'var(--color-grad-end)',
+                rose: '#ED4956',
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'fade-in-up': 'fadeInUp 0.4s ease-out forwards',
+              'slide-up': 'slideUp 0.3s ease-out forwards',
+              'pop': 'pop 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+              'bounce-joy': 'bounceJoy 1s infinite',
+              'shake-stress': 'shakeStress 0.5s infinite',
+              'breathe-calm': 'breatheCalm 4s ease-in-out infinite',
+              'typing': 'typing 1.4s infinite ease-in-out both',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(100%)' },
+                '100%': { transform: 'translateY(0)' },
+              },
+              pop: {
+                '0%': { transform: 'scale(0.8)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              },
+              bounceJoy: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-6px)' },
+              },
+              shakeStress: {
+                '0%, 100%': { transform: 'translateX(0)' },
+                '25%': { transform: 'translateX(-2px)' },
+                '75%': { transform: 'translateX(2px)' },
+              },
+              breatheCalm: {
+                '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+                '50%': { transform: 'scale(1.05)', opacity: '0.9' },
+              },
+              typing: {
+                '0%, 80%, 100%': { transform: 'scale(0)' },
+                '40%': { transform: 'scale(1)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      :root {
+        /* Default Dark Theme (Instagram/Midnight) */
+        --color-base: #000000;
+        --color-surface: #121212;
+        --color-highlight: #262626;
+        --color-primary: #FAFAFA;
+        --color-secondary: #A8A8A8;
+        --color-accent: #0095F6;
+        --color-grad-start: #833AB4;
+        --color-grad-mid: #FD1D1D;
+        --color-grad-end: #FCB045;
+      }
+
+      [data-theme='pastel'] {
+        /* Cozy Pastel Theme */
+        --color-base: #F9F7F2; /* Warm Cream */
+        --color-surface: #FFFFFF; /* White Cards */
+        --color-highlight: #F0EFE9; /* Light Beige elements */
+        --color-primary: #2D2D2D; /* Soft Black text */
+        --color-secondary: #6B6B6B; /* Muted Grey text */
+        --color-accent: #6FB3B8; /* Soft Teal/Sage */
+        --color-grad-start: #A5B4FC; /* Soft Periwinkle */
+        --color-grad-mid: #FCA5A5;   /* Soft Peach */
+        --color-grad-end: #FDE047;   /* Soft Lemon */
+      }
+
+      body {
+        background-color: var(--color-base);
+        color: var(--color-primary);
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--color-base); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--color-highlight); 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-secondary); 
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
